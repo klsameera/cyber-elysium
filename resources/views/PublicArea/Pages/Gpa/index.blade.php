@@ -1,3 +1,5 @@
+@section('title','CyberElysium | GPA Calculator')
+@section('ogtitle','CyberElysium | GPA Calculator')
 @extends('PublicArea.Layouts.app')
 @section('head')
 <div class="page-title-area" style="padding-top: 0vh">

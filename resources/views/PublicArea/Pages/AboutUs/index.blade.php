@@ -1,3 +1,5 @@
+@section('title','CyberElysium | About Us')
+@section('ogtitle','CyberElysium | About Us')
 @extends('PublicArea.Layouts.app')
 @section('head')
 <div class="page-title-area" style="padding-top: 0vh">

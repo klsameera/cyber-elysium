@@ -1,3 +1,5 @@
+@section('title','CyberElysium | Contact Us')
+@section('ogtitle','CyberElysium | Contact Us')
 @extends('PublicArea.Layouts.app')
 
 @section('head')

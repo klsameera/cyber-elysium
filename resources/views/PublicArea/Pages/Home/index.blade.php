@@ -1,3 +1,6 @@
+@section('title','CyberElysium | Home')
+@section('ogtitle','CyberElysium | Home')
+
 @extends('PublicArea.Layouts.app')
 @section('content')
 <!-- Start Banner Area -->

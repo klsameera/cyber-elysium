@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about-us', [HomeController::class,'about'])->name('about');
+Route::get('/privacy-policy', [HomeController::class,'privacy'])->name('privacy');
+Route::get('/terms&conditions', [HomeController::class,'terms'])->name('terms');
 
 
 Route::prefix('contact-us')->group(function () {

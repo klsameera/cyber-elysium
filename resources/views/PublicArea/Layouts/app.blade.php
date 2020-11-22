@@ -4,7 +4,25 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta content="GPA calculator, university gpa calculate, best gpa calculator" name="keywords">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="@yield('description','best gpa calculator in the world')" />
+    <title>@yield('title','CyberElysium | Home')</title>
+
+    <meta property="og:title" content="@yield('ogtitle','CyberElysium')" />
+    <meta property="og:url" content="{{Request::url()}}" />
+
+    <meta property="og:type" content="@yield('ogtype','website')" />
+    <meta property="og:article:published_time" content="@yield('ogarticlepublish','')"  />
+    <meta property="og:article:section" content="@yield('ogarticlesection','')"  />
+
+    <meta property="og:video:tag" content="@yield('ogvideotag','')"  />
+
+    <meta property="og:image" content="@yield('ogimage',asset("img/logo.png") )"  />
+    <meta property="og:image:secure_url" content="@yield('ogimage', asset("img/logo.png") )"  />
+    <meta property="og:image:width" content="@yield('ogimagewidth',500)"  />
+    <meta property="og:image:height" content="@yield('ogimageheight',200)"  />
 
     @php
     $curr_url = Route::currentRouteName();
@@ -17,7 +35,6 @@
     <link href="{{ asset('img/logo.png') }}" rel="apple-touch-icon">
 
     <!-- Title -->
-    <title>@yield('title','CyberElysium | Public')</title>
 </head>
 
 <body>
