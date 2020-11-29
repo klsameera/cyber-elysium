@@ -353,7 +353,18 @@ class GpaService
         return $this->settings->getByAccount($account_id);
     }
 
+    public function newAccount()
+    {
+        $newKey = Str::random(100);
+        Cookie::queue('active_account', $newKey, 9999999);
 
+        $data['key'] = $newKey;
+        $accounts = $this->accounts->create($data);
+        $newData['account_id'] = $accounts->id;
+        $this->settings->create($newData);
+
+        return $accounts;
+    }
 
 
 }

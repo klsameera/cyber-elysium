@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PublicArea\AccountController;
 use App\Http\Controllers\PublicArea\ContactUsController;
 use App\Http\Controllers\PublicArea\GpaController;
 use App\Http\Controllers\PublicArea\HomeController;
@@ -38,3 +39,6 @@ Route::prefix('gpa')->group(function () {
     Route::get('/get/report', [GpaController::class,'report'])->name('gpa.get.report');
 
 });
+
+Route::get('/account/new', [AccountController::class,'createNew'])->name('account.create.new');
+

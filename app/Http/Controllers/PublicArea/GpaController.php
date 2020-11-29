@@ -79,4 +79,5 @@ class GpaController extends Controller
         $response['tc'] = $this;
         return view('PublicArea.Pages.Gpa.report')->with($response);
     }
+
 }

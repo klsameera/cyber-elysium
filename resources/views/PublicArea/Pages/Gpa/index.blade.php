@@ -199,14 +199,22 @@
                                 </div>
                             </div>
                         </div>
+
+                        @if ($settings->status==1)
                         <div class="col-12 cart-totals pt-3" id="gpa_totals">
 
                         </div>
                         <div class="col-12 mt-3">
-                            <a href="{{ route('gpa.get.report') }}" class="btn btn-success" style="width: 100%">
+                            <a href="{{ route('gpa.get.report') }}" class="btn btn-success btn-block">
                                 Get Report
                             </a>
                         </div>
+                        <div class="col-12 mt-3">
+                            <a href="javascript:void(0)" onclick="createNew('{{ route('account.create.new') }}','Do You Want To Create New GPA Calculator')" class=" default-btn btn-block">
+                                Create New
+                            </a>
+                        </div>
+                        @endif
                     </div>
                 </form>
             </div>
@@ -259,12 +267,6 @@
             $("#year_4").prop('required',true);
         }
 
-        {{-- $('#1st_year_table').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
-        }); --}}
     });
 
     function addCourse() {
@@ -273,12 +275,16 @@
         var grade = $('#inp_grade').val();
         var year = getCookie('select_year');
 
+        if(year == null){
+            year = 1;
+        }
         var data = {
             code: code,
             credit: credit,
             grade: grade,
             year: year,
         };
+        console.log(data);
         $.ajax({
             url: "{{ route('gpa.course.store') }}",
             headers: {
@@ -359,6 +365,35 @@
                 },
             }
         });
+    }
+
+    function createNew(url, title = "Do You Want To Create new") {
+        $.confirm({
+            title: 'Are you sure,',
+            content: title,
+            autoClose: 'cancel|8000',
+            type: 'green',
+            theme: 'material',
+            backgroundDismiss: false,
+            backgroundDismissAnimation: 'glow',
+            buttons: {
+                'Yes, Create IT': function () {
+                    window.location.href = url;
+                    confirmButton: "Yes";
+                    cancelButton: "Cancel";
+                    clearCookie();
+                },
+                cancel: function () {
+
+                },
+
+            }
+        });
+    }
+
+    function clearCookie(){
+        setCookie('select_year', '', 0)
+        setCookie('year_percentage_enable', '', 0)
     }
 
     function yearSelect() {

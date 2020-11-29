@@ -16,4 +16,16 @@ class HomeController extends Controller
     {
         return view('PublicArea.Pages.AboutUs.index');
     }
+
+    public function privacy()
+    {
+        return view('PublicArea.Pages.PrivacyPolicy.index');
+    }
+
+    public function terms()
+    {
+        return view('PublicArea.Pages.TeamAndConditions.index');
+    }
+
+
 }
